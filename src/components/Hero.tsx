@@ -18,15 +18,28 @@ const Hero = () => {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-display font-bold leading-tight">
               Empowering the{" "}
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                future
+                Future
               </span>{" "}
               with AI-Driven Solutions
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl">
-              Revolutionize your business with cutting-edge artificial intelligence. 
-              Automate workflows, enhance decision-making, and unlock unprecedented growth.
+              Automate petition drafting with AI for faster, accurate, and hassle-free legal work. 
+              Perfect for law and real estate firms.
             </p>
+
+            <div className="flex items-center gap-3 p-4 bg-card/50 backdrop-blur-sm rounded-2xl border border-border/50 max-w-md">
+              <div className="flex -space-x-3">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 border-2 border-background flex items-center justify-center">
+                    <Users className="w-5 h-5 text-primary" />
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm font-medium">
+                <span className="text-primary font-bold">10,000+</span> people already joined AI Solutions USA
+              </p>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
@@ -45,29 +58,6 @@ const Hero = () => {
               </Button>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 pt-8">
-              <div className="space-y-1">
-                <div className="flex items-center space-x-2">
-                  <Users className="w-5 h-5 text-primary" />
-                  <p className="text-2xl font-bold">500+</p>
-                </div>
-                <p className="text-sm text-muted-foreground">Active Users</p>
-              </div>
-              <div className="space-y-1">
-                <div className="flex items-center space-x-2">
-                  <Zap className="w-5 h-5 text-primary" />
-                  <p className="text-2xl font-bold">99.9%</p>
-                </div>
-                <p className="text-sm text-muted-foreground">Uptime</p>
-              </div>
-              <div className="space-y-1">
-                <div className="flex items-center space-x-2">
-                  <Sparkles className="w-5 h-5 text-primary" />
-                  <p className="text-2xl font-bold">24/7</p>
-                </div>
-                <p className="text-sm text-muted-foreground">Support</p>
-              </div>
-            </div>
           </div>
 
           <div className="relative animate-slide-in-right">
