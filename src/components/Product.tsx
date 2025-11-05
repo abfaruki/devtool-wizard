@@ -7,22 +7,26 @@ const features = [
   {
     icon: Clock,
     title: "Real-Time Valuation",
-    description: "Instantly generate accurate property valuations with up-to-the-minute data, eliminating delays.",
+    description:
+      "Instantly generate accurate property valuations with up-to-the-minute data, eliminating delays.",
   },
   {
     icon: BarChart3,
     title: "Advanced Data Analysis",
-    description: "Leverage sophisticated algorithms that analyze vast market trends for highly reliable insights.",
+    description:
+      "Leverage sophisticated algorithms that analyze vast market trends for highly reliable insights.",
   },
   {
     icon: RefreshCw,
     title: "Continuous Monitoring",
-    description: "Stay updated with ongoing market changes so valuations reflect real-time conditions.",
+    description:
+      "Stay updated with ongoing market changes so valuations reflect real-time conditions.",
   },
   {
     icon: TrendingUp,
     title: "Enhanced Efficiency",
-    description: "Reduce time spent on traditional appraisals, allowing you to focus on client engagement.",
+    description:
+      "Reduce time spent on traditional appraisals, allowing you to focus on client engagement.",
   },
 ];
 
@@ -30,7 +34,7 @@ const Product = () => {
   return (
     <section id="product" className="py-20 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/5 to-background"></div>
-      
+
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <div className="text-center mb-16 space-y-4 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
@@ -41,8 +45,8 @@ const Product = () => {
             AI Product
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Our modular AI platform brings together drafting tools, chatbots, voice-based services,
-            and intelligent agents in a single ecosystem.
+            Our modular AI platform brings together drafting tools, chatbots,
+            voice-based services, and intelligent agents in a single ecosystem.
           </p>
         </div>
 
@@ -52,22 +56,11 @@ const Product = () => {
             <img
               src={productImage}
               alt="AI Real Estate Valuation Platform"
-              className="relative rounded-3xl shadow-2xl w-full h-auto object-cover"
+              className="relative rounded-3xl shadow-2xl w-full h-[550px] object-cover"
             />
           </div>
 
           <div className="space-y-8 animate-slide-in-right order-1 lg:order-2">
-            <div className="space-y-4">
-              <h3 className="text-2xl sm:text-3xl font-display font-bold">
-                AI for Real Estate and Property Valuation
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Transform property valuation with state-of-the-art AI algorithms that instantly 
-                analyze vast data sets, delivering highly accurate real-time valuations. Move with 
-                certainty and confidence in your investment decisions.
-              </p>
-            </div>
-
             <div className="space-y-4">
               {features.map((feature, index) => (
                 <Card
@@ -79,8 +72,12 @@ const Product = () => {
                       <feature.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
-                      <h4 className="font-display font-semibold mb-1">{feature.title}</h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                      <h4 className="font-display font-semibold mb-1">
+                        {feature.title}
+                      </h4>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {feature.description}
+                      </p>
                     </div>
                   </CardContent>
                 </Card>

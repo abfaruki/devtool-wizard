@@ -1,71 +1,150 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Quote, Star } from "lucide-react";
+import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Olivia K.",
-    role: "Manager, Media Production",
-    content: "I've been using AI Solutions for a few weeks now and they have one of the best support teams! They reply quickly and I can even schedule calls with them. The feature I like most is its ability to target users in a specific location. Overall, great team and the app has huge potential!",
+    name: "Sarah Johnson",
+    role: "CEO, TechStart Inc.",
+    company: "TechStart Inc.",
+    content:
+      "AI Remarkables transformed our business operations completely. Their AI integration saved us 40+ hours per week and increased our productivity by 300%. The team is incredibly responsive and professional.",
     rating: 5,
+    avatar: "https://randomuser.me/api/portraits/women/1.jpg",
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    name: "Michael Chen",
+    role: "Operations Director",
+    company: "Global Solutions Ltd.",
+    content:
+      "The document automation system they built for us is phenomenal. What used to take days now takes minutes. Our legal team can focus on strategy instead of repetitive paperwork.",
+    rating: 5,
+    avatar: "https://randomuser.me/api/portraits/men/2.jpg",
+    gradient: "from-purple-500 to-pink-500",
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "Marketing Manager",
+    company: "Creative Agency Pro",
+    content:
+      "Their sales automation platform doubled our lead conversion rate. The AI-powered personalization is incredible - it's like having a dedicated sales team working 24/7.",
+    rating: 5,
+    avatar: "https://randomuser.me/api/portraits/women/3.jpg",
+    gradient: "from-orange-500 to-red-500",
+  },
+  {
+    name: "David Thompson",
+    role: "Founder & CTO",
+    company: "InnovateLab",
+    content:
+      "Working with AI Remarkables was a game-changer. Their virtual assistant services freed up our team to focus on innovation. The ROI was visible within the first month.",
+    rating: 5,
+    avatar: "https://randomuser.me/api/portraits/men/4.jpg",
+    gradient: "from-green-500 to-emerald-500",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-20 lg:py-32 bg-muted/30 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,hsl(var(--secondary)/0.05),transparent_50%)]"></div>
-      
+    <section className="py-24 relative overflow-hidden bg-gradient-to-b from-background to-muted/20">
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-secondary/5 rounded-full blur-3xl"></div>
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <div className="text-center mb-16 space-y-4 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold">
-            What Our{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              Clients
-            </span>{" "}
-            Say
+        {/* Header */}
+        <div className="text-center mb-20 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-primary/10 to-secondary/10 px-6 py-3 rounded-full border border-primary/20 mb-6">
+            <Quote className="w-5 h-5 text-primary" />
+            <span className="font-medium text-primary">
+              Client Success Stories
+            </span>
+          </div>
+
+          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold mb-6">
+            <span className="bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+              Trusted
+            </span>
+            <br />
+            by Industry Leaders
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Real feedback from real customers building amazing things with our AI solutions
+
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            See how businesses like yours are achieving remarkable results with
+            our AI solutions
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        {/* Testimonials Grid */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
           {testimonials.map((testimonial, index) => (
-            <Card
+            <div
               key={index}
-              className="group hover:shadow-2xl transition-all duration-500 bg-card/50 backdrop-blur-sm border-border/50 relative overflow-hidden"
+              className="group relative"
+              style={{ animationDelay: `${index * 150}ms` }}
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <CardContent className="p-8 lg:p-12 space-y-6 relative z-10">
-                <Quote className="w-12 h-12 text-primary/40" />
-                
-                <p className="text-lg lg:text-xl text-foreground leading-relaxed italic">
-                  "{testimonial.content}"
-                </p>
+              {/* Testimonial Card */}
+              <div className="relative h-full bg-background/60 backdrop-blur-sm border border-border/50 rounded-3xl p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:border-primary/30">
+                {/* Gradient Background on Hover */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${testimonial.gradient} opacity-0 group-hover:opacity-5 rounded-3xl transition-opacity duration-500`}
+                ></div>
 
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
+                {/* Quote Icon */}
+                <div
+                  className={`w-12 h-12 bg-gradient-to-br ${testimonial.gradient} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500`}
+                >
+                  <Quote className="w-6 h-6 text-white" />
                 </div>
 
-                <div className="flex items-center gap-4 pt-4 border-t border-border/50">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center text-xl font-bold text-primary">
-                    {testimonial.name.charAt(0)}
+                {/* Content */}
+                <div className="relative space-y-6">
+                  {/* Stars */}
+                  <div className="flex items-center gap-1">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-5 h-5 fill-current text-gradient-to-r ${testimonial.gradient}`}
+                        style={{ color: "#3B82F6" }}
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <p className="font-display font-bold text-lg">– {testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+
+                  {/* Testimonial Text */}
+                  <blockquote className="text-lg leading-relaxed text-foreground">
+                    "{testimonial.content}"
+                  </blockquote>
+
+                  {/* Author Info */}
+                  <div className="flex items-center gap-4 pt-4">
+                    <img
+                      src={testimonial.avatar}
+                      alt={testimonial.name}
+                      className="w-16 h-16 rounded-full object-cover border-2 border-background shadow-lg"
+                    />
+                    <div>
+                      <h4 className="font-display font-bold text-lg">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-sm text-muted-foreground">
+                        {testimonial.role}
+                      </p>
+                      <p
+                        className={`text-sm font-medium bg-gradient-to-r ${testimonial.gradient} bg-clip-text text-transparent`}
+                      >
+                        {testimonial.company}
+                      </p>
+                    </div>
                   </div>
                 </div>
 
-                <p className="text-xs text-muted-foreground italic pt-4">
-                  Testimonial is from an owner or employee of a current AI Solutions USA customer. 
-                  Customers have not or will not be compensated in any way when providing testimonials.
-                </p>
-              </CardContent>
-            </Card>
+                {/* Hover Effect Border */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${testimonial.gradient} opacity-0 group-hover:opacity-10 rounded-3xl blur-xl transition-opacity duration-500 -z-10`}
+                ></div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

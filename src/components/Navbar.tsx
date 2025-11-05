@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.svg";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -25,23 +26,32 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center space-x-2 animate-fade-in">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg"></div>
-            <span className="font-display text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-              AI Remarkables
-            </span>
+            <img src={logo} alt="AI Solutions US Logo" className="" />
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-foreground hover:text-primary transition-colors">
+            <a
+              href="#features"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Features
             </a>
-            <a href="#product" className="text-foreground hover:text-primary transition-colors">
+            <a
+              href="#product"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Product
             </a>
-            <a href="#blog" className="text-foreground hover:text-primary transition-colors">
+            <a
+              href="#blog"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Blog
             </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+            <a
+              href="#contact"
+              className="text-foreground hover:text-primary transition-colors"
+            >
               Contact
             </a>
           </div>
